@@ -77,7 +77,7 @@ public class FSA {
     }
 
     public static int char_to_index(char c) {
-        if(Character.isWhitespace(c)) {
+        if(Character.isWhitespace(c) || c == '\n') {
             return 6;
         }
         else if(Character.isLetter(c)) {
@@ -109,7 +109,14 @@ public class FSA {
         
     }
 
-    
+    public boolean isFinal(int state) {
+        if(table[state][2] == 1) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 
 
 }
