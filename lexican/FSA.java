@@ -1,5 +1,6 @@
 //Brett Smith
-//February 22nd, 2023
+//March 2nd, 2023
+//I need to restructure my FSA to match what is in the notes (March, 2nd)
 
 import java.io.*;
 import java.util.Scanner;
