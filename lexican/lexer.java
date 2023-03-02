@@ -2,7 +2,6 @@
 //You don't have permission to use this code for compiler class..
 //I just need a VCS, so I am uploading it to git
 
-import java.util.*;
 import java.io.*;
 
 //right now 2/26 i am having trouble getting it to read the character it left off on
@@ -25,7 +24,6 @@ public class lexer {
             //use tlist.addToken(state_t.processInput(r)) to add to list
         boolean fin_state = false;
             //flag to determine if we are in a final state
-        boolean has_mark = false;
         int i_char;
             //bufferedreader, read in next char as int (need to convert to char (c_char))
         char c_char;
