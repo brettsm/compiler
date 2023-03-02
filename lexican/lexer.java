@@ -57,6 +57,7 @@ public class lexer {
                     break;
                 case 5:
                     val = val + c_char;
+                    type = "<var>";
                     System.out.println("Val = " + val);
                     break;
                 case 6:
@@ -140,6 +141,7 @@ public class lexer {
                         break;
                     case 5:
                         val = val + c_char;
+                        type = "<var>";
                         System.out.println("Val = " + val);
                         break;
                     case 6:
