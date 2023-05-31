@@ -1,4 +1,6 @@
 {
-    "java.project.sourcePaths": [],
+    "java.project.sourcePaths": [
+        "lexical_analyzer"
+    ],
     "java.dependency.packagePresentation": "flat"
 }

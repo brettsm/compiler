@@ -1,0 +1,28 @@
+CLASS nestedW {
+    VAR count;
+
+    count = 1;
+
+    WHILE count <= 10 DO {
+        WHILE count <= 8 DO {
+            WHILE count <= 6 DO {
+                WHILE count <= 4 DO {
+                    WHILE count <= 2 DO {
+                        PRINT 5;
+                        count = count + 1;
+                    }
+                    PRINT 4;
+                    count = count + 1;
+                }
+                PRINT 3;
+                count = count + 1;
+            }
+            PRINT 2;
+            count = count + 1;
+        }
+        PRINT 1;
+        count = count + 1;
+    }
+    /*prints the level it is on twice to
+    show that nested while works*/
+}

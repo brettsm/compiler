@@ -1,3 +1,8 @@
+//token.java
+//Brett Smith
+//March 10, 2023
+//Defines token, or the information in a row of the token list
+//============================================================
 public class token {
     private String value;
     private String type;

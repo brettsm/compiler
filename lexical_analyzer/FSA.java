@@ -1,6 +1,6 @@
 //Brett Smith
 //March 2nd, 2023
-//I need to restructure my FSA to match what is in the notes (March, 2nd)
+//The FSA used for creating the token list
 
 import java.io.*;
 import java.util.Scanner;
@@ -77,6 +77,7 @@ public class FSA {
         }
     }
 
+    //given a character, maps it to the an index of the state table
     public static int char_to_index(char c) {
         if(Character.isWhitespace(c) || c == '\n') {
             return 6;
@@ -99,17 +100,53 @@ public class FSA {
         else if(c == '<') {
             return 5;
         }
-        else {
+        else if(c == '{') {
             return 7;
+        }
+        else if(c == '}') {
+            return 8;
+        }
+        else if(c == '+') {
+            return 9;
+        }
+        else if(c == ';') {
+            return 10;
+        }
+        else if(c == ',') {
+            return 11;
+        }
+        else if(c == '(') {
+            return 12;
+        }
+        else if(c == ')') {
+            return 13;
+        }
+        else if(c == '>') {
+            return 14;
+        }
+        else if(c == '!') {
+            return 15;
+        } 
+        else if(c == '-') {
+            return 16;
+        }
+        else {
+            return -1;
         }
             //These are basically just the indices of the columns of the heuristic parser table
     }
 
+    //given the current state and an input character returns next state
+    //with a row col lookup for the state table here
     public int nextState(int curst, char in) {
+        
         return this.table[curst][char_to_index(in)];
         
     }
 
+
+    //used to determine if in a final state
+    //Unused
     public boolean isFinal(int state) {
         if(table[state][2] == 1) {
             return true;

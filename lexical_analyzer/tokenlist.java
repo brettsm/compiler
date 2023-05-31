@@ -1,4 +1,10 @@
+//Brett Smith
+//Methods and fields to create the tokenlist
+//ArrayList of tokens
+//==========================================
+
 import java.util.*;
+import java.io.*;
 
 public class tokenlist {
     private ArrayList<token> alist;
@@ -18,6 +24,16 @@ public class tokenlist {
         }
     }
 
+    public void printTokenList(String fname) throws IOException {
+        BufferedWriter out = new BufferedWriter(new FileWriter(new File(fname)));
+        
+        for(int i = 0; i < alist.size() - 1; i++) {
+            out.write(alist.get(i).getValue() + " " + alist.get(i).getType());
+            out.newLine();
+        }
+        out.close();
+    }
+
     public void addToken(token t) {
         this.alist.add(t);
     }
@@ -32,6 +48,10 @@ public class tokenlist {
 
     public String getType(int i) throws IndexOutOfBoundsException {
         return this.alist.get(i).getType();
+    }
+
+    public int getLength() {
+        return this.alist.size();
     }
     
 }
