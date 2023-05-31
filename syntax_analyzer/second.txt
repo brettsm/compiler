@@ -1,0 +1,5 @@
+
+	c	DW	?
+
+section .text
+	global $pgmname

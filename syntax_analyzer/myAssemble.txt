@@ -1,0 +1,91 @@
+	mov ax,[Lit1]
+	mov [count], ax
+W1:	mov ax,[count]
+	cmp ax,[Lit10]
+	JG	L1
+W2:	mov ax,[count]
+	cmp ax,[Lit8]
+	JG	L2
+W3:	mov ax,[count]
+	cmp ax,[Lit6]
+	JG	L3
+W4:	mov ax,[count]
+	cmp ax,[Lit4]
+	JG	L4
+W5:	mov ax,[count]
+	cmp ax,[Lit2]
+	JG	L5
+	mov ax,[Lit5]
+	call ConvertIntegerToString
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, Result
+	mov edx, ResultEnd
+	int 80h
+	mov ax,[count]
+	add ax,[Lit1]
+	mov [T1], ax
+	mov ax,[T1]
+	mov [count], ax
+	jmp W5
+L5:	nop
+	mov ax,[Lit4]
+	call ConvertIntegerToString
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, Result
+	mov edx, ResultEnd
+	int 80h
+	mov ax,[count]
+	add ax,[Lit1]
+	mov [T1], ax
+	mov ax,[T1]
+	mov [count], ax
+	jmp W4
+L4:	nop
+	mov ax,[Lit3]
+	call ConvertIntegerToString
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, Result
+	mov edx, ResultEnd
+	int 80h
+	mov ax,[count]
+	add ax,[Lit1]
+	mov [T1], ax
+	mov ax,[T1]
+	mov [count], ax
+	jmp W3
+L3:	nop
+	mov ax,[Lit2]
+	call ConvertIntegerToString
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, Result
+	mov edx, ResultEnd
+	int 80h
+	mov ax,[count]
+	add ax,[Lit1]
+	mov [T1], ax
+	mov ax,[T1]
+	mov [count], ax
+	jmp W2
+L2:	nop
+	mov ax,[Lit1]
+	call ConvertIntegerToString
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, Result
+	mov edx, ResultEnd
+	int 80h
+	mov ax,[count]
+	add ax,[Lit1]
+	mov [T1], ax
+	mov ax,[T1]
+	mov [count], ax
+	jmp W1
+L1:	nop
+fini:
+	mov eax, 1
+	xor ebx, ebx
+	int	0x80
